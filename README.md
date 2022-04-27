@@ -56,4 +56,5 @@ const createRandomNumberList = (min, max) => {
     return numberList
 
 }
+
 The flaw in the program was the if statement that checked to see if the random number generated was already in the existing array, this greatly increased the computational time. It is far superior to generate an array initially and the shuffle its contents afterwards
