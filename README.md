@@ -43,7 +43,7 @@ O(n). It still performs well with very large input values.
 
 The other algorithm that I considered is shown below and was rejected because of its poor performance when using larger numbers. The performance was compared to the algorithm described above and there were significant differences in computational time between the two:
 
-const createRandomNumberList = (min, max) => {
+    const createRandomNumberList = (min, max) => {
     let numberList = [];
     while (numberList.length<max) {
 
@@ -53,7 +53,6 @@ const createRandomNumberList = (min, max) => {
      }
     }
     return numberList
-
-}
+    }
 
 The flaw in the program was the if statement that checked to see if the random number generated was already in the existing array, this greatly increased the computational time. It is far superior to generate an array initially and the shuffle its contents afterwards
