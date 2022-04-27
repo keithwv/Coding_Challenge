@@ -1,39 +1,31 @@
-const { performance } = require('perf_hooks')
- 
-// function below will create 
+const { performance } = require("perf_hooks");
 
-const createRandomNumberList = (min, max) => {
+// Function will shuffle an array in a random order
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    let randomPosition = Math.floor(Math.random() * (i + 1));
+    let temp = array[i];
+    // swap elements
+    array[i] = array[randomPosition];
+    array[randomPosition] = temp;
+  }
+  return array;
+};
+// Function will create an array between a user specified min and max (min & max inclusive).
+// Then shuffle newly created array in a random order
+const createRandomArray = (min, max) => {
+  let generatedArray = [];
+  for (let i = min; i <= max; i++) {
+    generatedArray.push(i);
+  }
+  shuffleArray(generatedArray) // shuffle generated Array
+  return generatedArray;
+};
 
-    let numberList = [];
-    while (numberList.length<max) {
-    
-    let random_number = Math.floor(Math.random()*(max-min+1))+min;
-     if (!numberList.includes(random_number)) {
-    numberList.push(random_number)
-     }
-    }
-    return numberList
-}
-const start = performance.now()
-const numberList = createRandomNumberList(1, 100000  )
-const end = performance.now()
-console.log(end-start)
-console.log(numberList)
-console.log(numberList.length)
+const start = performance.now();
+const x = createRandomArray(1, 30);
+const end = performance.now();
+console.log(end - start);
+console.log(x);
 
-const unique_values = new Set(createRandomNumberList(1,30)).size
- 
-console.log("number of unique numbers:", unique_values)
-// const checkforduplications = (array) => {
-//     console.log(new Set(array).size !== array.length)
-//     return new Set(array).size !== array.length
-// }
-
-// // checkforduplications(numberList)
-
-// let x = createRandomNumberList()
-// console.log(x)
-
-
-module.exports = createRandomNumberList
-
+module.exports = createRandomArray;
