@@ -1,4 +1,5 @@
-// In order to run
+// In order to run file type "node RandomNumberGenerator.js" in the terminal window
+// See README.md for more thorough explanation
 
 // Function will shuffle an array in a random order
 const shuffleArray = (array) => {
@@ -22,14 +23,14 @@ const createRandomArray = (min, max) => {
   return generatedArray;
 };
 
-// run function that will generate a random list between 1 and 10000
+// run function to generate a random list between 1 and 10000
 const finalArray = createRandomArray(1, 10000);
 
-// print final array to show that it that numbers are in random order
+// print final array to show that the numbers are in random order
 console.log("Sample of the generated array shown below:");
 console.log(finalArray);
 
-//print array size and the number of unique values to ensure they are equal
+// print array size and the number of unique values to ensure they are equal
 console.log("The length of the generated array is", finalArray.length);
 console.log(
   "The number of unique values in the generated array is",
