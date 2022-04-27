@@ -1,4 +1,4 @@
-const { performance } = require("perf_hooks");
+// In order to run
 
 // Function will shuffle an array in a random order
 const shuffleArray = (array) => {
@@ -12,20 +12,29 @@ const shuffleArray = (array) => {
   return array;
 };
 // Function will create an array between a user specified min and max (min & max inclusive).
-// Then shuffle newly created array in a random order
+// Then shuffle newly created array in a random order using the shuffleArray function defined above
 const createRandomArray = (min, max) => {
   let generatedArray = [];
   for (let i = min; i <= max; i++) {
     generatedArray.push(i);
   }
-  shuffleArray(generatedArray) // shuffle generated Array
+  shuffleArray(generatedArray); // shuffle generated Array
   return generatedArray;
 };
 
-const start = performance.now();
-const x = createRandomArray(1, 30);
-const end = performance.now();
-console.log(end - start);
-console.log(x);
+// run function that will generate a random list between 1 and 10000
+const finalArray = createRandomArray(1, 10000);
 
+// print final array to show that it that numbers are in random order
+console.log("Sample of the generated array shown below:");
+console.log(finalArray);
+
+//print array size and the number of unique values to ensure they are equal
+console.log("The length of the generated array is", finalArray.length);
+console.log(
+  "The number of unique values in the generated array is",
+  new Set(finalArray).size
+);
+
+//Export function
 module.exports = createRandomArray;
