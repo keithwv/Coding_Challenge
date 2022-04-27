@@ -1,4 +1,4 @@
-// In order to run file type "node RandomNumberGenerator.js" in the terminal window
+// In order to run program type "node RandomNumberGenerator.js" in the terminal window
 // See README.md for more thorough explanation
 
 // Function will shuffle an array in a random order
@@ -23,7 +23,7 @@ const createRandomArray = (min, max) => {
   return generatedArray;
 };
 
-// run function to generate a random list between 1 and 10000
+// run function to generate a random list between 1 and 10000 and store the output in a variable
 const finalArray = createRandomArray(1, 10000);
 
 // print final array to show that the numbers are in random order
